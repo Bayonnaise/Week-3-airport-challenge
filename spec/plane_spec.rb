@@ -9,11 +9,11 @@ describe Plane do
 	end
 
 	it 'can land' do
-		expect(plane_in_air.land!).not_to be_flying
+		expect(plane_on_ground).not_to be_flying
 	end
 
 	it 'can take off' do
-		expect(plane_on_ground.take_off!).to be_flying
+		plane_on_ground.take_off!
+		expect(plane_on_ground).to be_flying
 	end
-
 end

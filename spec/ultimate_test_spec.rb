@@ -4,12 +4,6 @@ require 'airport'
 describe 'The final, ultimate, very last big test' do
 
 	let (:airport) 	{ Airport.new }
-	# let (:plane1)	{ Plane.new }
-	# let (:plane2)	{ Plane.new }
-	# let (:plane3)	{ Plane.new }
-	# let (:plane4)	{ Plane.new }
-	# let (:plane5)	{ Plane.new }
-	# let (:plane6)	{ Plane.new }
 
 	it 'all planes can land and take off' do
 		planes = []
@@ -34,7 +28,6 @@ describe 'The final, ultimate, very last big test' do
 		planes.each do |plane|
 			expect(plane).to be_flying
 		end
-
-
+		
 	end
 end

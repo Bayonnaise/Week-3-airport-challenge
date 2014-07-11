@@ -1,7 +1,7 @@
 require 'plane'
 
 describe Plane do
-	let(:plane_in_air)    { Plane.new }
+	let(:plane_in_air)    { Plane.new 		}
 	let(:plane_on_ground) { Plane.new.land! }
 
 	it 'has a flying status when created' do

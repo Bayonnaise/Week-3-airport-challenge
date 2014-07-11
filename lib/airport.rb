@@ -1,4 +1,8 @@
+require_relative 'weather_condition'
+
 class Airport
+
+	include WeatherCondition
 
 	DEFAULT_CAPACITY = 6
 
@@ -18,16 +22,15 @@ class Airport
 	end
 
 	def accept(plane)
-		if plane.flying? && !full?
-			plane.land!
-			planes << plane
-		end
+		return if full? || !plane.flying? || weather == "stormy"
+		plane.land!
+		planes << plane
 	end
 
 	def release(plane)
-		if !plane.flying?
-			plane.take_off!
-			planes.delete(plane)
-		end
+		return if plane.flying? || weather == "stormy"
+		plane.take_off!
+		planes.delete(plane)
 	end
+
 end

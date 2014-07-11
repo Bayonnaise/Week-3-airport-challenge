@@ -22,15 +22,22 @@ class Airport
 	end
 
 	def accept(plane)
-		return if full? || !plane.flying? || weather == "stormy"
+		return if abort_accept?(plane)
 		plane.land!
 		planes << plane
 	end
 
 	def release(plane)
-		return if plane.flying? || weather == "stormy"
+		return if abort_release?(plane)
 		plane.take_off!
 		planes.delete(plane)
 	end
 
+	def abort_accept?(plane)
+		full? || !plane.flying? || weather == "stormy" 
+	end
+
+	def abort_release?(plane)
+		plane.flying? || weather == "stormy"
+	end
 end

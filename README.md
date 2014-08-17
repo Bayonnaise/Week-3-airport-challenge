@@ -7,9 +7,9 @@ To build a functioning air traffic control system that can tell when planes are 
 
 Tools used
 --
-Ruby
-Rspec
-OOP
+- Ruby
+- Rspec
+- OOP
 
 How to run tests
 --
